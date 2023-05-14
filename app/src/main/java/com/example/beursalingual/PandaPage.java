@@ -92,4 +92,3 @@ public class PandaPage extends AppCompatActivity {
         startActivity(intent);
     }
 }
-
