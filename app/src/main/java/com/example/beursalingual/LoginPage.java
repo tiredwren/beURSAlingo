@@ -98,7 +98,7 @@ public class LoginPage extends AppCompatActivity {
     }
 
     private void sendUserToNextActivity() {
-        Intent intent = new Intent(LoginPage.this, PandaPage.class);
+        Intent intent = new Intent(LoginPage.this, GrizzlyPage.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
