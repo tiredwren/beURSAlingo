@@ -24,15 +24,13 @@
                 android:id="@+id/heading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="74dp"
-                android:layout_marginEnd="74dp"
-                android:layout_marginBottom="220dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/bevan"
-                android:text="level one: communication basics"
+                android:text="level three: nuances of the language"
                 android:textColor="#f2f3f3"
                 app:layout_constraintBottom_toTopOf="@+id/panda_one"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
@@ -69,6 +67,7 @@
 
             <Button
                 android:id="@+id/panda"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="130dp"
                 android:layout_height="82dp"
                 android:layout_marginBottom="37dp"
@@ -85,9 +84,9 @@
 
             <Button
                 android:id="@+id/panda_one"
-                android:layout_width="410dp"
-                android:layout_height="67dp"
-                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
                 android:layout_marginTop="240dp"
                 android:background="@drawable/rounded_corners"
                 android:backgroundTint="#f2f5f3"
@@ -101,9 +100,9 @@
 
             <Button
                 android:id="@+id/panda_two"
-                android:layout_width="410dp"
-                android:layout_height="67dp"
-                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
                 android:background="@drawable/rounded_corners"
                 android:text="greetings"
                 android:textAllCaps="false"
@@ -116,9 +115,9 @@
 
             <Button
                 android:id="@+id/panda_three"
-                android:layout_width="410dp"
-                android:layout_height="67dp"
-                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
                 android:background="@drawable/rounded_corners"
                 android:text="greetings"
                 android:textAllCaps="false"
@@ -130,9 +129,9 @@
 
             <Button
                 android:id="@+id/panda_four"
-                android:layout_width="410dp"
-                android:layout_height="67dp"
-                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
                 android:background="@drawable/rounded_corners"
                 android:text="greetings"
                 android:textAllCaps="false"
