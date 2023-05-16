@@ -1,21 +1,19 @@
 package com.example.beursalingual;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
-import android.view.ViewDebug;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.FileAsyncHttpResponseHandler;
@@ -23,14 +21,8 @@ import com.loopj.android.http.FileAsyncHttpResponseHandler;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Locale;
-
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import cz.msebera.android.httpclient.Header;
-
-import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.WorkbookSettings;
@@ -44,12 +36,11 @@ public class MainActivity extends AppCompatActivity {
     AsyncHttpClient client;
     Workbook workbook;
     ArrayList<String> arrayList = new ArrayList<>();
-
+    ImageButton back;
     // declaring menu buttons:
     private Button grizzlyButton;
     private Button polarButton;
     private Button pandaButton;
-
     // tts:
     private TextToSpeech textToSpeech;
     private TextView editText;
@@ -82,26 +73,15 @@ public class MainActivity extends AppCompatActivity {
         grizzlyButton = findViewById(R.id.grizzly);
         polarButton = findViewById(R.id.polar);
         pandaButton = findViewById(R.id.panda);
+        back = findViewById(R.id.backArrow);
 
-        // on-click listeners for menu buttons:
-        grizzlyButton.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, GrizzlyPage.class));
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
-        polarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PolarPage.class));
-            }
-        });
-        pandaButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PandaPage.class));
-            }
-        });
+
 
         // setting headers for each section / text for each button
         TextView textView = findViewById(R.id.heading);
@@ -173,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                         workbook = Workbook.getWorkbook(file);
                         Sheet sheet = workbook.getSheet(0);
                         for (int i = 0; i < 25; i++) {
-                            arrayList.add("\n" + sheet.getCell(keyNumber-1, i).getContents());
+                            arrayList.add("\n" + sheet.getCell(keyNumber - 1, i).getContents());
                         }
 //
                         showData();
@@ -186,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     private void showData() {
         adapter = new Adapter(this, arrayList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

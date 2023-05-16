@@ -1,11 +1,11 @@
 package com.example.beursalingual;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class GrizzlyPage extends AppCompatActivity {
 
@@ -40,12 +40,6 @@ public class GrizzlyPage extends AppCompatActivity {
         btn4 = findViewById(R.id.grizzly_four);
 
         // on-click listeners for menu bar:
-        grizzlyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(GrizzlyPage.this, GrizzlyPage.class));
-            }
-        });
         polarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,7 +82,7 @@ public class GrizzlyPage extends AppCompatActivity {
 
     // method to transition from lesson buttons to actual activity page (main)
     public void openMainActivity(int key) {
-        Intent intent = new Intent (this, MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra(KEY_AS_PARAMETER, key);
         startActivity(intent);
     }

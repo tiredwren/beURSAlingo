@@ -1,11 +1,11 @@
 package com.example.beursalingual;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class PandaPage extends AppCompatActivity {
     public static final String KEY_AS_PARAMETER = "com.example.beursalingual.KEY_AS_PARAMETER";
@@ -51,12 +51,7 @@ public class PandaPage extends AppCompatActivity {
                 startActivity(new Intent(PandaPage.this, PolarPage.class));
             }
         });
-        pandaButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(PandaPage.this, PandaPage.class));
-            }
-        });
+
 
         // on-click listeners for lesson buttons:
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +82,7 @@ public class PandaPage extends AppCompatActivity {
 
     // method to transition from lesson buttons to actual activity page (main)
     public void openMainActivity(int key) {
-        Intent intent = new Intent (this, MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra(KEY_AS_PARAMETER, key);
         startActivity(intent);
     }

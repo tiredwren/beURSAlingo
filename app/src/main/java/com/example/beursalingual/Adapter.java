@@ -1,13 +1,9 @@
 package com.example.beursalingual;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,8 +18,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     List<String> wordsList;
     private Context context;
 
-    public Adapter(Context context, List<String> wordsList){
-        this.inflater= LayoutInflater.from(context);
+    public Adapter(Context context, List<String> wordsList) {
+        this.inflater = LayoutInflater.from(context);
         this.wordsList = wordsList;
     }
 
@@ -48,9 +44,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return wordsList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView inputtedWord;
         ConstraintLayout parentLayout;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             inputtedWord = itemView.findViewById(R.id.textInputToCheck);

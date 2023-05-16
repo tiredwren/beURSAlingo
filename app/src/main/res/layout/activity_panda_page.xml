@@ -71,7 +71,7 @@
                 android:layout_width="130dp"
                 android:layout_height="82dp"
                 android:layout_marginBottom="37dp"
-                android:backgroundTint="#DB8A74"
+                android:backgroundTint="@android:color/transparent"
                 android:fontFamily="@font/modak"
                 android:text="panda"
                 android:textAllCaps="false"
